@@ -12,6 +12,7 @@ Software
 
 1. connect all hardware first, as described above
 2. run `OPC/fcserver-osx`
+  - Check [this article](https://learn.adafruit.com/1500-neopixel-led-curtain-with-raspberry-pi-fadecandy/fadecandy-server-setup) for Raspberry Pi Fadecandy install on the Pi.
   - test by going to http://localhost:7890/
   - you should see **Fadecandy LED Controller** under Connected Devices
     - If you see **No devices are connected!**, check connection between computer and Fadecandy
