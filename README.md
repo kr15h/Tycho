@@ -7,12 +7,56 @@ Hardware
 // TODO : instructions for hanging and connecting hardware
 
 
-Software
---------
+
+# Software
+
+## Raspberry Pi
+
+Installing Fadecandy is easy. First, clone the repository.
+
+```
+git clone https://github.com/scanlime/fadecandy.git
+```
+
+Then compile it. It should take less than 10 minutes.
+
+```
+cd fadecandy/server
+make submodules
+make
+```
+
+Make the binary accessible by the shell.
+
+```
+sudo mv fcserver /usr/local/bin
+```
+
+Use crontab to start it at boot. First, open crontab.
+
+```
+crontab -e
+```
+
+If it asks your preferences regarding text editors, type 2 for nano and hit Enter. Add the following line to the file.
+
+```
+@reboot /usr/local/bin/fcserver
+```
+
+Press Ctrl+x and y and Enter to save and exit. Now on each reboot the server will be launched automaniacally. Open the web browser on the Raspberry Pi and test the server by using the following URL.
+
+```
+http://localhost:7890
+```
+
+It should display a basic website with the title Fadecandy Server. It shows the connected devices and what not.
+
+
+## Mac OS X
 
 1. connect all hardware first, as described above
 2. run `OPC/fcserver-osx`
-  - Check [this article](https://learn.adafruit.com/1500-neopixel-led-curtain-with-raspberry-pi-fadecandy/fadecandy-server-setup) for Raspberry Pi Fadecandy install on the Pi.
   - test by going to http://localhost:7890/
   - you should see **Fadecandy LED Controller** under Connected Devices
     - If you see **No devices are connected!**, check connection between computer and Fadecandy
