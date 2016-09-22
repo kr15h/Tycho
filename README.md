@@ -41,7 +41,7 @@ crontab -e
 If it asks your preferences regarding text editors, type 2 for nano and hit Enter. Add the following line to the file.
 
 ```
-@reboot /usr/local/bin/fcserver
+@reboot sudo /usr/local/bin/fcserver
 ```
 
 Press Ctrl+x and y and Enter to save and exit. Now on each reboot the server will be launched automaniacally. Open the web browser on the Raspberry Pi and test the server by using the following URL.
