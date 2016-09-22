@@ -9,8 +9,8 @@ public class CameraColorSensor extends ColorSensor {
 
 	// RESOLUTION
 	// TODO: make this all less magic
-	private final int RES_W = 80;
-	private final int RES_H = 3;
+	private final int RES_W = 160;
+	private final int RES_H = 120;
 	private final int TARGET_PIXEL = 40;
 	private final int FRAMERATE = 30;
 	private final String CAMERA_NAME = "Logitech Camera";
@@ -18,8 +18,20 @@ public class CameraColorSensor extends ColorSensor {
 
 	public CameraColorSensor(PApplet pap) {
 		super(pap);
-//		System.out.println(Capture.list());
-		camera = new Capture(pap, RES_W, RES_H, CAMERA_NAME, FRAMERATE);
+
+		String[] cameras = Capture.list();
+
+		if(cameras.length == 0){
+			System.out.println("No camz.");
+		//	exit();
+		}else{
+			System.out.println("There are cams.");
+			for(int i = 0; i < cameras.length; i++){
+     				 System.out.println(cameras[i]);
+    			}
+		}
+
+		camera = new Capture(pap, RES_W, RES_H, cameras[0]);
 		camera.start();
 	}
 

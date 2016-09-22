@@ -8,6 +8,7 @@ import tycho.led.LEDPhotons;
 import tycho.led.LEDs;
 import tycho.sensor.ColorSensor;
 import tycho.sensor.DummyColorSensor;
+import tycho.sensor.CameraColorSensor;
 
 @SuppressWarnings("serial")
 public class Tycho_LED extends PApplet {
@@ -28,16 +29,20 @@ public class Tycho_LED extends PApplet {
 	int SIZE_W = 100;
 	int SIZE_H = 6;
 
-	public void setup() {
+	public void settings(){
 		size(SIZE_W, SIZE_H, P2D);
+	}
+
+	public void setup() {
+		//size(SIZE_W, SIZE_H);
 		colorMode(HSB, 360, 100, 100);
 		blendMode(ADD);
 
 		PApplet pap = this;
 
 		// Color Sensor
-//		 colorSensor = new CameraColorSensor(pap);
-		colorSensor = new DummyColorSensor(pap);
+		colorSensor = new CameraColorSensor(pap);
+		//colorSensor = new DummyColorSensor(pap);
 
 		// LEDs
 		leds = new LEDs(pap);

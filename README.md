@@ -70,6 +70,10 @@ Then `run.sh`.
 ./run.sh
 ```
 
+Having issues with this file now. Have to add it to the java path.
+
+/usr/lib/arm-linux-gnueabihf/jni/libjnidispatch.so
+
 
 ## Mac OS X
 
