@@ -6,11 +6,7 @@ Hardware
 
 // TODO : instructions for hanging and connecting hardware
 
-
-
-# Software
-
-## Raspberry Pi
+## Fadecandy on Raspberry Pi 
 
 Installing Fadecandy is easy. First, clone the repository.
 
@@ -51,6 +47,28 @@ http://localhost:7890
 ```
 
 It should display a basic website with the title Fadecandy Server. It shows the connected devices and what not.
+
+
+## Compiling and Running Java
+
+You need to have javac and java binaries to do this. There are `compile.sh` and `run.sh` scripts in the Tycho_LED code directory. Make sure that both of them have execute permissions.
+
+```
+chmod a+x compile.sh
+chmod a+x run.sh
+```
+
+Run the `compile.sh` first.
+
+```
+./compile.sh
+```
+
+Then `run.sh`.
+
+```
+./run.sh
+```
 
 
 ## Mac OS X
